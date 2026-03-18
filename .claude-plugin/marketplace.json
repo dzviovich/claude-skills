@@ -1,0 +1,21 @@
+{
+  "name": "claude-skills",
+  "owner": {
+    "name": "dzviovich"
+  },
+  "metadata": {
+    "description": "Custom Claude Code skills",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "expert-shopper",
+      "description": "Personal shopping assistant with long-term memory and purchase tracking. Triggers on shopping help, product research, purchase comparisons, finding deals, or /expert_shopper.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./expert-shopper"
+      ]
+    }
+  ]
+}
