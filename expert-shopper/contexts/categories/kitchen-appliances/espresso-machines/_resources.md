@@ -23,26 +23,26 @@
 
 ## Best Retailers (New)
 
-| Retailer | Notes |
-|---|---|
-| Amazon | Good for Breville, DeLonghi entry-mid range |
-| Williams-Sonoma | Good selection, frequent 20% off sales |
-| Whole Latte Love | Specialty retailer, free shipping, good support |
-| Seattle Coffee Gear | Knowledgeable staff, good return policy |
-| Clive Coffee | Premium machines, excellent customer service |
-| Prima Coffee | Curated selection, good descriptions |
-| Best Buy | Limited selection, useful for Breville |
-| Costco | Occasional Breville/DeLonghi deals with extended warranty |
+| Retailer | Notes | URL |
+|---|---|---|
+| Amazon | Good for Breville, DeLonghi entry-mid range | https://www.amazon.com |
+| Williams-Sonoma | Good selection, frequent 20% off sales | https://www.williams-sonoma.com |
+| Whole Latte Love | Specialty retailer, free shipping, good support | https://www.wholelattelove.com |
+| Seattle Coffee Gear | Knowledgeable staff, good return policy | https://www.seattlecoffeegear.com |
+| Clive Coffee | Premium machines, excellent customer service | https://clivecoffee.com |
+| Prima Coffee | Curated selection, good descriptions | https://prima-coffee.com |
+| Best Buy | Limited selection, useful for Breville | https://www.bestbuy.com |
+| Costco | Occasional Breville/DeLonghi deals with extended warranty | https://www.costco.com |
 
 ## Used / Refurbished Sources
 
-| Source | Notes |
-|---|---|
-| eBay | Wide selection; check seller ratings carefully for used machines |
-| Facebook Marketplace | Local pickup — inspect water reservoir, ask for test pull |
-| r/espresso "WTS" posts | Community sales, often well-maintained machines |
-| Craigslist | Local, inspect thoroughly |
-| Manufacturer refurb | Breville Remanufactured (breville.com/outlet) — good value |
+| Source | Notes | URL |
+|---|---|---|
+| eBay | Wide selection; check seller ratings carefully for used machines | https://www.ebay.com |
+| Facebook Marketplace | Local pickup — inspect water reservoir, ask for test pull | https://www.facebook.com/marketplace |
+| r/espresso "WTS" posts | Community sales, often well-maintained machines | https://reddit.com/r/espresso |
+| Craigslist | Local, inspect thoroughly | https://www.craigslist.org |
+| Breville Outlet | Remanufactured, good value | https://www.breville.com/collections/outlet |
 
 ## Key Search Strings
 

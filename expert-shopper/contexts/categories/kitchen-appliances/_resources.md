@@ -12,22 +12,22 @@
 
 ## General Kitchen Retailers
 
-| Retailer | Notes |
-|---|---|
-| Amazon | Broadest selection, competitive |
-| Williams-Sonoma | Premium selection, frequent 20% off sales |
-| Sur La Table | Similar to Williams-Sonoma, good deals |
-| Bed Bath & Beyond (now Overstock) | Historically coupon-friendly |
-| Costco | Good for Breville, KitchenAid deals |
-| Best Buy | Expanding kitchen selection |
-| Target | Good for mid-range appliances |
+| Retailer | Notes | URL |
+|---|---|---|
+| Amazon | Broadest selection, competitive | https://www.amazon.com |
+| Williams-Sonoma | Premium selection, frequent 20% off sales | https://www.williams-sonoma.com |
+| Sur La Table | Similar to Williams-Sonoma, good deals | https://www.surlatable.com |
+| Overstock (fka Bed Bath & Beyond) | Historically coupon-friendly | https://www.overstock.com |
+| Costco | Good for Breville, KitchenAid deals | https://www.costco.com |
+| Best Buy | Expanding kitchen selection | https://www.bestbuy.com |
+| Target | Good for mid-range appliances | https://www.target.com |
 
 ## Used / Refurbished Sources
 
-| Source | Notes |
-|---|---|
-| Breville Outlet (breville.com) | Factory-remanufactured, 1-year warranty |
-| KitchenAid Certified Refurbished | kitchenaid.com/other/certified-refurbished |
-| eBay | Wide selection; check for tested condition |
-| Facebook Marketplace | Best for large/heavy items (saves shipping) |
-| Craigslist | Local deals, inspect before buying |
+| Source | Notes | URL |
+|---|---|---|
+| Breville Outlet | Factory-remanufactured, 1-year warranty | https://www.breville.com/collections/outlet |
+| KitchenAid Certified Refurbished | Official refurb store | https://www.kitchenaid.com/other/certified-refurbished.html |
+| eBay | Wide selection; check for tested condition | https://www.ebay.com |
+| Facebook Marketplace | Best for large/heavy items (saves shipping) | https://www.facebook.com/marketplace |
+| Craigslist | Local deals, inspect before buying | https://www.craigslist.org |

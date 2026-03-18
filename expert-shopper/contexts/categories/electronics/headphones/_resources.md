@@ -22,26 +22,28 @@
 
 ## Best Retailers (New)
 
-| Retailer | Notes |
-|---|---|
-| Amazon | Best prices, wide selection, Prime shipping |
-| Best Buy | Price-match, in-store listening (some locations), student deals |
-| B&H Photo | Good for audio gear, often matches Amazon |
-| Adorama | Alternative audio retailer |
-| Costco | Occasional Bose/Sony deals with extended warranty |
-| Apple Store | Best for AirPods Max, education discounts |
-| Manufacturer direct | Sony, Bose, Jabra all sell direct with occasional promos |
+| Retailer | Notes | URL |
+|---|---|---|
+| Amazon | Best prices, wide selection, Prime shipping | https://www.amazon.com |
+| Best Buy | Price-match, in-store listening (some locations), student deals | https://www.bestbuy.com |
+| B&H Photo | Good for audio gear, often matches Amazon | https://www.bhphotovideo.com |
+| Adorama | Alternative audio retailer | https://www.adorama.com |
+| Costco | Occasional Bose/Sony deals with extended warranty | https://www.costco.com |
+| Apple Store | Best for AirPods Max, education discounts | https://www.apple.com/shop |
+| Sony Direct | Official store, occasional promos | https://electronics.sony.com |
+| Bose Direct | Official store, occasional promos | https://www.bose.com |
+| Jabra Direct | Official store, occasional promos | https://www.jabra.com |
 
 ## Used / Refurbished Sources
 
-| Source | Notes |
-|---|---|
-| eBay (Used – Good) | Wide selection; check seller rating and return policy |
-| Amazon Renewed | Amazon-backed, 90-day return minimum |
-| Back Market | Good for Sony/Bose, graded + warranty |
-| Best Buy Geek Squad Certified | Refurb with Geek Squad warranty |
-| Facebook Marketplace | Local deals; inspect for ear pad wear, driver damage |
-| Swappa | Less common for headphones but some listings |
+| Source | Notes | URL |
+|---|---|---|
+| eBay (Used – Good) | Wide selection; check seller rating and return policy | https://www.ebay.com |
+| Amazon Renewed | Amazon-backed, 90-day return minimum | https://www.amazon.com/renewed |
+| Back Market | Good for Sony/Bose, graded + warranty | https://www.backmarket.com |
+| Best Buy Geek Squad Certified | Refurb with Geek Squad warranty | https://www.bestbuy.com/site/electronics/outlet-refurbished/pcmcat142300050026.c |
+| Facebook Marketplace | Local deals; inspect for ear pad wear, driver damage | https://www.facebook.com/marketplace |
+| Swappa | Less common for headphones but some listings | https://swappa.com |
 
 ## Key Search Strings
 

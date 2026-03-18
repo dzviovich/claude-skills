@@ -16,21 +16,21 @@ These are fallback resources for electronics that don't have their own subcatego
 
 ## General Electronics Retailers
 
-| Retailer | Notes |
-|---|---|
-| Amazon | Broadest selection, competitive pricing |
-| Best Buy | Price-match, in-store demo, Geek Squad support |
-| B&H Photo | Strong for cameras, audio, professional equipment |
-| Costco | Extended return policy, occasional killer deals |
-| Target | Convenient, reasonable prices on mainstream products |
-| Walmart | Budget-friendly options |
+| Retailer | Notes | URL |
+|---|---|---|
+| Amazon | Broadest selection, competitive pricing | https://www.amazon.com |
+| Best Buy | Price-match, in-store demo, Geek Squad support | https://www.bestbuy.com |
+| B&H Photo | Strong for cameras, audio, professional equipment | https://www.bhphotovideo.com |
+| Costco | Extended return policy, occasional killer deals | https://www.costco.com |
+| Target | Convenient, reasonable prices on mainstream products | https://www.target.com |
+| Walmart | Budget-friendly options | https://www.walmart.com |
 
 ## General Used/Refurb Sources
 
-| Source | Notes |
-|---|---|
-| Back Market | Best curated refurb marketplace for electronics |
-| Amazon Renewed | Wide selection, Amazon-backed |
-| eBay (Certified Refurb) | Broad selection, use certified filter |
-| Swappa | Peer-reviewed, phones/tablets/laptops focus |
-| Facebook Marketplace | Local deals |
+| Source | Notes | URL |
+|---|---|---|
+| Back Market | Best curated refurb marketplace for electronics | https://www.backmarket.com |
+| Amazon Renewed | Wide selection, Amazon-backed | https://www.amazon.com/renewed |
+| eBay (Certified Refurb) | Broad selection, use certified filter | https://www.ebay.com/b/Certified-Refurbished/bn_7040708936 |
+| Swappa | Peer-reviewed, phones/tablets/laptops focus | https://swappa.com |
+| Facebook Marketplace | Local deals | https://www.facebook.com/marketplace |

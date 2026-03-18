@@ -23,28 +23,31 @@
 
 ## Best Retailers (New)
 
-| Retailer | Notes |
-|---|---|
-| Amazon | Best prices, wide selection, Prime shipping |
-| Best Buy | Price-match guarantee, in-store try before buy, student discounts |
-| B&H Photo | Good for creative/pro laptops, no-tax in many states |
-| Costco | Extended return policy (90 days), Kirkland warranty extension |
-| Walmart | Budget options, often matches Amazon |
-| Direct from manufacturer | Apple, Dell, Lenovo, HP all have education/business discounts |
-| Adorama | Alternative to B&H, good bundles |
+| Retailer | Notes | URL |
+|---|---|---|
+| Amazon | Best prices, wide selection, Prime shipping | https://www.amazon.com |
+| Best Buy | Price-match guarantee, in-store try before buy, student discounts | https://www.bestbuy.com |
+| B&H Photo | Good for creative/pro laptops, no-tax in many states | https://www.bhphotovideo.com |
+| Costco | Extended return policy (90 days), Kirkland warranty extension | https://www.costco.com |
+| Walmart | Budget options, often matches Amazon | https://www.walmart.com |
+| Apple Store | Education/business discounts on Macs | https://www.apple.com/shop |
+| Dell Direct | Education/business discounts, custom config | https://www.dell.com |
+| Lenovo Direct | Education/business discounts, custom config | https://www.lenovo.com |
+| HP Direct | Education/business discounts | https://www.hp.com |
+| Adorama | Alternative to B&H, good bundles | https://www.adorama.com |
 
 ## Used / Refurbished Sources
 
-| Source | Notes |
-|---|---|
-| Apple Certified Refurbished | Best option for used Macs — Apple-tested, 1yr warranty |
-| Dell Outlet | Refurbished Dell/Alienware with full warranty |
-| Lenovo Outlet | Certified refurb ThinkPads/IdeaPads |
-| Back Market | Graded electronics, 1yr warranty, good for mid-range |
-| Swappa | Peer-reviewed listings, lower risk than eBay |
-| eBay (Certified Refurbished) | Wide selection, use "Certified Refurbished" filter |
-| Amazon Renewed | Amazon-backed refurb program |
-| Facebook Marketplace | Local — best for quick deals, inspect before buying |
+| Source | Notes | URL |
+|---|---|---|
+| Apple Certified Refurbished | Best option for used Macs — Apple-tested, 1yr warranty | https://www.apple.com/shop/refurbished |
+| Dell Outlet | Refurbished Dell/Alienware with full warranty | https://www.dell.com/en-us/shop/dell-refurbished/cp/outlet |
+| Lenovo Outlet | Certified refurb ThinkPads/IdeaPads | https://www.lenovo.com/us/outletus/en/outletus/ |
+| Back Market | Graded electronics, 1yr warranty, good for mid-range | https://www.backmarket.com |
+| Swappa | Peer-reviewed listings, lower risk than eBay | https://swappa.com/laptops |
+| eBay (Certified Refurbished) | Wide selection, use "Certified Refurbished" filter | https://www.ebay.com/b/Certified-Refurbished/bn_7040708936 |
+| Amazon Renewed | Amazon-backed refurb program | https://www.amazon.com/renewed |
+| Facebook Marketplace | Local — best for quick deals, inspect before buying | https://www.facebook.com/marketplace |
 
 ## Useful Search Strings
 
