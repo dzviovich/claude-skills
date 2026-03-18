@@ -1,0 +1,23 @@
+{
+  "skill_name": "expert-shopper",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "/expert_shopper I need a new laptop for my college student daughter. She'll be studying graphic design. Budget is around $1200 but could stretch a little. She prefers something lightweight. Not sure about Mac vs Windows.",
+      "expected_output": "The skill should ask clarifying questions before recommending anything — e.g. which design software she uses (Adobe CC? Figma?), screen size preference, importance of battery life, whether she has existing Apple ecosystem, any brand preferences. Then it should present 3-5 laptop options in a comparison table with pros/cons, price ranges, and highlight a top pick. After selection, it should show where to buy (new and used/refurbished).",
+      "files": []
+    },
+    {
+      "id": 1,
+      "prompt": "/expert_shopper I want to buy a good espresso machine. My budget is flexible. I make 2-3 cups a day, mostly lattes. I've been using a Nespresso but want to upgrade.",
+      "expected_output": "The skill should probe further: does the user want to grind their own beans or use pre-ground? How hands-on do they want to be (automatic vs. semi-auto vs. manual)? Counter space constraints? Budget 'flexible' should be clarified with a range. Then present a comparison table of espresso machines (e.g. entry-level semi-auto, mid-range, prosumer options) with relevant specs (pump pressure, steam wand, grinder needed?), pros/cons, and pricing. Offer used/refurbished options (eBay, Back Market) as a separate section.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "/expert_shopper I'm looking for wireless noise-canceling headphones. My budget is $200-300. I mainly use them for work calls and listening to music while commuting. I have an iPhone. Sony or Bose are fine but open to other brands too.",
+      "expected_output": "Good requirements given — the skill may still ask about fit preference (over-ear vs on-ear), whether call quality or music quality is the higher priority, or if they need multipoint connection (connecting to multiple devices). Should present 3-5 options (Sony WH-1000XM5, Bose QC45/QC Ultra, maybe Jabra/Apple AirPods Max) in a clear table with ANC quality, mic quality, battery, iOS integration noted. Should present both new and used/refurbished prices.",
+      "files": []
+    }
+  ]
+}
