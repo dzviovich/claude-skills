@@ -92,8 +92,21 @@ this is a new project or the continuation of an existing one.
 
 ### Step 1 — Bootstrap the shopper directory
 
-If `~/shopper/` does not exist, create it and create an empty `projects.md` inside it.
-Also bootstrap `~/.expert-shopper/` from seed files if needed (see Context Loading below).
+If `~/shopper/` does not exist, create it and copy the projects registry template:
+```bash
+mkdir -p ~/shopper
+cp "${CLAUDE_SKILL_DIR}/contexts/projects.md" ~/shopper/projects.md
+```
+
+If `~/.expert-shopper/` does not exist, bootstrap it by copying the seed knowledge base:
+```bash
+mkdir -p ~/.expert-shopper
+cp -r "${CLAUDE_SKILL_DIR}/contexts/categories" ~/.expert-shopper/categories
+cp "${CLAUDE_SKILL_DIR}/contexts/global_preferences.md" ~/.expert-shopper/global_preferences.md
+```
+This copies pre-built category knowledge (electronics, kitchen-appliances, etc.) so the
+assistant has useful context from the very first session. If `~/.expert-shopper/` already
+exists, skip this step — the user's customized knowledge base takes precedence.
 
 ### Step 2 — Read the projects registry
 
