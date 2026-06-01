@@ -6,7 +6,7 @@ description: Weekly digest of active projects, recent sessions, and decisions in
 Generate Diego's weekly memory digest from his Obsidian "AI" vault.
 
 VAULT ACCESS
-- Vault root: C:\obsidian (a standard Obsidian vault of markdown files).
+- Vault root: C:\Users\dzvio\Obsidian\AI\AI (a standard Obsidian vault of markdown files).
 - Preferred: use your file tools (Read/Write/Edit/Glob) directly on that path if the folder is accessible.
 - Fallback: if you don't have file access, use the mcp-obsidian MCP tools (list_files_in_vault, list_files_in_dir, get_file_contents, search, append_content). This requires Obsidian to be running with the AI vault open.
 - If you can reach the vault by neither method, stop and report "weekly digest skipped — vault not accessible (open Obsidian with the AI vault, or mount the folder)." Do not fabricate content.
