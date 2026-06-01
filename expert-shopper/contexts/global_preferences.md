@@ -1,20 +1,35 @@
 # Global User Preferences
 
-This file records cross-category preferences, habits, and context about the user.
-New entries go at the top. Each entry is dated and summarizes one session's learnings.
-
-<!-- EXPERT SHOPPER MEMORY — Do not delete this file -->
+<!-- EXPERT SHOPPER MEMORY — Do not delete this file. This is a living preference
+     profile, not a session log. Update in place — read first, then add/modify/remove
+     entries as appropriate. Do not append session summaries. -->
 
 ## How to use this file
 
-When starting any shopping session, load this file first. Use the preferences here to:
-- Skip questions the user has already answered globally (e.g., "are you open to used items?")
-- Frame recommendations in line with the user's known philosophy
-- Avoid recommending things the user has explicitly ruled out across all categories
+Load at the start of every shopping session. These preferences apply across all product
+categories. Use them to frame recommendations, skip redundant intake questions, and avoid
+repeating known mistakes. If an entry seems stale or contradicted by recent behavior,
+update or remove it rather than adding a conflicting entry.
 
 ---
 
-## Session History
+## Brand preferences / avoidances
+<!-- Cross-category brand opinions (e.g., "distrusts subscription-based hardware brands") -->
 
-<!-- New entries will be added here automatically as you shop -->
+## Shopping habits
+<!-- Openness to used/refurb, preferred retailers, platform preferences (e.g., Prime),
+     willingness to wait for deals, etc. -->
 
+## Budget philosophy
+<!-- How the user approaches budgets — hard ceiling vs. soft, willingness to stretch, etc. -->
+
+## Life context
+<!-- Stable facts that shape purchases across categories (e.g., apartment dweller, frequent
+     traveler, has young children, etc.) -->
+
+## Ethical / environmental preferences
+<!-- Sustainability concerns, brand ethics, manufacturing preferences, etc. -->
+
+## Feedback on recommendations
+<!-- How the user prefers to receive recommendations (e.g., "fewer options is better",
+     "always show a budget pick") -->

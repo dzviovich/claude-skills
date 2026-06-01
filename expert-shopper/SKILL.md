@@ -37,8 +37,11 @@ Two sibling directories are used:
 │   ├── comparison.md                   ← the comparison table and top pick
 │   ├── selection.md                    ← final choice + where-to-buy results
 │   ├── purchase_log.md                 ← actual purchase record + post-buy analysis
-│   └── receipts/                       ← copies of receipt/invoice files
-│       └── receipt-2026-03-20.pdf
+│   ├── receipts/                       ← copies of receipt/invoice files
+│   │   └── receipt-2026-03-20.pdf
+│   └── analysis/                       ← raw research notes, sourced facts, and web findings
+│       ├── review-research.md          ← expert/editorial review findings (Track A)
+│       └── pricing-research.md         ← marketplace pricing findings (Track B)
 │
 └── 2026-03-18 - wireless headphones/
     └── ...
@@ -75,6 +78,7 @@ Create new category/subcategory knowledge files during Phase 6 (Memory Update).
 First, determine which of two modes you're entering:
 
 **→ PURCHASE LOGGING MODE** if the user:
+
 - Shares a file attachment that looks like a receipt, invoice, or order confirmation
 - Shares a URL that looks like an order confirmation page (amazon.com/orders/, bestbuy.com/order/, etc.)
 - Says something like "I bought it", "here's my receipt", "I went ahead and purchased",
@@ -93,17 +97,20 @@ this is a new project or the continuation of an existing one.
 ### Step 1 — Bootstrap the shopper directory
 
 If `~/shopper/` does not exist, create it and copy the projects registry template:
+
 ```bash
 mkdir -p ~/shopper
 cp "${CLAUDE_SKILL_DIR}/contexts/projects.md" ~/shopper/projects.md
 ```
 
 If `~/.expert-shopper/` does not exist, bootstrap it by copying the seed knowledge base:
+
 ```bash
 mkdir -p ~/.expert-shopper
 cp -r "${CLAUDE_SKILL_DIR}/contexts/categories" ~/.expert-shopper/categories
 cp "${CLAUDE_SKILL_DIR}/contexts/global_preferences.md" ~/.expert-shopper/global_preferences.md
 ```
+
 This copies pre-built category knowledge (electronics, kitchen-appliances, etc.) so the
 assistant has useful context from the very first session. If `~/.expert-shopper/` already
 exists, skip this step — the user's customized knowledge base takes precedence.
@@ -147,29 +154,33 @@ or the registry is empty. Proceed directly to creating a new project (Step 4).
 ### Step 4 — Handle "I want to continue an existing project"
 
 If the user says they want to resume a previous project:
+
 1. Check the registry for the entry they mean.
 2. Check that `~/shopper/{folder-name}/` actually exists on disk.
 3. If found → load `requirements.md` and `comparison.md` from that folder (if they exist)
    to restore context. Confirm with the user: "I've found your previous work on [X].
    Here's where we left off: [brief summary]. Where would you like to continue?"
 4. If **not found on disk** (registry entry exists but folder is missing or unreadable):
+   
    > "I have a registry entry for that project but I wasn't able to find the folder on disk.
    > Could you point me to the directory, or would you prefer to start a new project?"
-   Give them both options clearly. If they provide a path, try to load it. If they prefer
-   starting fresh, proceed to Step 5.
+   > Give them both options clearly. If they provide a path, try to load it. If they prefer
+   > starting fresh, proceed to Step 5.
 
 ### Step 5 — Create a new project
 
 1. **Name the project**: derive a short, descriptive slug from the user's request.
    Format: `yyyy-mm-dd - descriptive name` using today's date. Examples:
+   
    - `2026-03-18 - gaming laptop for college`
    - `2026-03-18 - semi-auto espresso machine`
    - `2026-03-18 - wireless anc headphones commute`
-   Keep it specific enough to be recognizable later but concise (4–6 words).
+     Keep it specific enough to be recognizable later but concise (4–6 words).
 
 2. **Create the folder**: `~/shopper/{project-folder-name}/`
 
 3. **Register it**: Append a new row to `~/shopper/projects.md`:
+   
    ```
    | {date} | {folder-name} | {one-sentence description} | {category/subcategory} | in-progress |
    ```
@@ -187,6 +198,7 @@ Before asking the user a single question, take 30 seconds to check what you alre
    → category: `kitchen-appliances`, subcategory: `espresso-machines`).
 
 2. **Load relevant context files** from `~/.expert-shopper/` if they exist:
+   
    - `global_preferences.md` — always load this; it shapes every session
    - `categories/{category}/_context.md` — what criteria matter for this category
    - `categories/{category}/_resources.md` — where to research this category
@@ -195,10 +207,11 @@ Before asking the user a single question, take 30 seconds to check what you alre
 
 3. **Surface known preferences**: If global or category preferences are loaded and relevant,
    acknowledge them naturally:
+   
    > "I see you've mentioned before that you prefer avoiding subscription-based products —
    > I'll keep that in mind."
-   Don't robotically list everything you know; just mention things that are directly relevant
-   to this specific search.
+   > Don't robotically list everything you know; just mention things that are directly relevant
+   > to this specific search.
 
 4. **Fill in context gaps**: The loaded context files tell you which questions are most
    important for this category. Use that knowledge to focus your intake questions (Phase 1)
@@ -213,6 +226,7 @@ Never make assumptions. Your job is to ask, not guess. Before doing any research
 all the information you need through targeted questions.
 
 Start with:
+
 > "I'd love to help you find the perfect [item]! To make sure I find exactly what fits you,
 > I have a few questions."
 
@@ -243,6 +257,12 @@ probe gently for specifics. A recommendation without real requirements is just a
 Once you have the user's requirements, research in two tracks. The category `_resources.md`
 file tells you the best sources to consult — always load and use it.
 
+**Save all research findings** to `~/shopper/{project-folder}/analysis/` as you go.
+Every fact, figure, and claim stored there **must include its source as a hyperlink**.
+Do not record bare assertions — if it came from a web page, link it. If a price has no
+direct URL, note the retailer and search query used. Files with missing links are not
+considered complete.
+
 ### Track A — Review & Expert Opinion Research
 
 Consult the sources listed in `categories/{category}/_resources.md` (and subcategory resources
@@ -256,18 +276,55 @@ if available). If no resources file exists yet, fall back to these defaults by c
   r/BuyItForLife
 
 Search for "[product category] best [year]" and "[specific model] review" to find:
+
 - Top recommended models in the user's budget range
 - Common complaints and known issues
 - Models experts consistently recommend year over year
+
+Save findings to `analysis/review-research.md` using this format:
+
+```markdown
+# Review Research — [Project Name]
+Generated: [date]
+
+## [Model Name]
+- [Fact or finding] — Source: [Publication name]([URL])
+- [Fact or finding] — Source: [Publication name]([URL])
+
+## [Model Name]
+- ...
+```
 
 ### Track B — Marketplace & Pricing Research
 
 Research pricing and availability across the retailers listed in the category `_resources.md`.
 If no file exists, use:
+
 - **General**: Amazon, Best Buy, Walmart, Target, Costco
 - **Specialty** (match to category): B&H Photo (cameras/electronics), REI (outdoor), etc.
 - **Used/refurbished**: eBay ("used – good" or "certified refurbished"), Amazon Warehouse
   Deals, Back Market (electronics), Swappa (phones/tablets), manufacturer refurb stores
+
+Save findings to `analysis/pricing-research.md` using this format:
+
+```markdown
+# Pricing Research — [Project Name]
+Generated: [date]
+
+## New — [Model Name]
+| Retailer | Price | URL | Notes |
+|----------|-------|-----|-------|
+| [Name] | $XXX | [link]([URL]) | [coupon/promo if any] |
+
+## Used / Refurb — [Model Name]
+| Source | Condition | Price | URL | Notes |
+|--------|-----------|-------|-----|-------|
+| [Name] | [Grade] | $XXX | [link]([URL]) | [seller rating, warranty] |
+```
+
+Every price row **must have a URL**. If a live URL is unavailable (e.g., search result
+rather than a direct listing), record the exact search query used so the finding can be
+reproduced.
 
 ---
 
@@ -278,6 +335,7 @@ Present **3–5 alternatives** that best match the user's requirements. Don't pa
 ### Comparison Table
 
 Include the spec rows that the category context file marks as key discriminators. Always include:
+
 - Product name (linked if possible)
 - Price range (new)
 - Key specs relevant to this user's stated needs (drawn from the category `_context.md`)
@@ -286,15 +344,15 @@ Include the spec rows that the category context file marks as key discriminators
 
 **Table format:**
 
-| | **Option A** | **Option B** | **Option C** |
-|---|---|---|---|
-| **Price (New)** | $X–$Y | $X–$Y | $X–$Y |
-| **[Key Spec 1]** | value | value | value |
-| **[Key Spec 2]** | value | value | value |
-| **Best for** | [use case] | [use case] | [use case] |
-| **Pros** | ✅ pro1 / ✅ pro2 | ✅ pro1 / ✅ pro2 | ✅ pro1 / ✅ pro2 |
-| **Cons** | ❌ con1 | ❌ con1 | ❌ con1 |
-| **Our pick?** | ⭐ Top pick | | Runner-up |
+|                  | **Option A**    | **Option B**    | **Option C**    |
+| ---------------- | --------------- | --------------- | --------------- |
+| **Price (New)**  | $X–$Y           | $X–$Y           | $X–$Y           |
+| **[Key Spec 1]** | value           | value           | value           |
+| **[Key Spec 2]** | value           | value           | value           |
+| **Best for**     | [use case]      | [use case]      | [use case]      |
+| **Pros**         | ✅ pro1 / ✅ pro2 | ✅ pro1 / ✅ pro2 | ✅ pro1 / ✅ pro2 |
+| **Cons**         | ❌ con1          | ❌ con1          | ❌ con1          |
+| **Our pick?**    | ⭐ Top pick      |                 | Runner-up       |
 
 After the table, write 2–4 sentences explaining the top recommendation and why it fits
 this particular user's stated needs and budget.
@@ -318,6 +376,7 @@ Prompt the user explicitly across each feedback axis that could be relevant. Use
 `AskUserQuestion` tool with `multiSelect: true` so they can flag all dimensions that apply:
 
 **Example question: "How does this look? Select everything you'd like to adjust:"**
+
 - 💰 Budget — I want to spend more / less than my original range
 - ⚙️ Features / specs — I need different capabilities or performance
 - 🏷️ Brands — I want to add, remove, or prioritize specific brands
@@ -371,6 +430,7 @@ OPEN FEEDBACK ITEMS:
 
 Address each item in the updated search and make clear in the revised presentation which
 adjustments were applied:
+
 > "Here's the updated comparison. I've applied 4 changes: tighter budget ($150–200),
 > added Jabra, removed Apple, added multipoint as a filter, and included one budget pick."
 
@@ -392,6 +452,7 @@ Consult the category `_resources.md` for preferred stores.
 ### Step 5a — Research: prices, deals, and coupons
 
 For each retailer, actively search for:
+
 1. **Current listed price** for the exact model/SKU
 2. **Active coupon codes** — search "[retailer] coupon [product]" and check RetailMeNot,
    Honey, CouponCabin, and the retailer's own promotions page
@@ -419,6 +480,7 @@ Use this format for each retailer — include only rows that have actual data:
 🔄 Price-match: [Yes — matches Amazon/Best Buy/etc.] OR [No]
 📋 Notes: [Any other relevant detail — e.g. "Includes free 2-yr protection plan",
            "Student discount available", "Open-box units at $X in store"]
+🔗 Website: [URL]
 ---
 ```
 
@@ -430,6 +492,7 @@ After all cards, add a one-line **Best Deal** callout:
 ### Step 5c — Present: Used / Open-Box / Refurbished
 
 Search these sources (plus any in the category `_resources.md`):
+
 - **eBay** — filter: "Used – Good" or "Certified Refurbished"; note seller rating
 - **Amazon Warehouse Deals** — "Used – Very Good" or better; Amazon-backed returns
 - **Back Market** (electronics) — graded A/B/C with warranty; search by model
@@ -448,6 +511,7 @@ Display each as a card in the same style, with condition and trust signals promi
 ⭐ Trust: [Amazon-backed / Seller rating 99.2% (1,400+ reviews) / Manufacturer-certified]
 🚚 Shipping: [Free / $X / Local pickup only]
 📋 Notes: [Any flags — e.g. "Minor cosmetic marks noted", "No original box", "Inspect on pickup"]
+🔗 Website: [URL]
 ---
 ```
 
@@ -457,6 +521,7 @@ Sort by effective price. After all cards, add:
 
 Then close with a **1–2 sentence verdict** on whether used/refurb is worth it for this
 specific item and user — weigh the savings against condition, warranty, and risk:
+
 > *"For this model, Back Market Grade A saves $130 (22%) and includes a 1-year warranty —
 > the risk is minimal and well worth it. If you want zero uncertainty, Amazon Warehouse
 > 'Very Good' at $X is Amazon-backed with standard return rights."*
@@ -465,11 +530,11 @@ specific item and user — weigh the savings against condition, warranty, and ri
 
 For purchases over ~$200, add a compact savings table at the end showing the spread:
 
-| Option | Price | Saves vs. MSRP |
-|---|---|---|
-| Best new deal ([Retailer] + coupon + cashback) | $XXX | $YY (X%) |
-| Best refurb deal ([Source], Grade A) | $XXX | $YY (X%) |
-| Best used deal ([Source], Very Good) | $XXX | $YY (X%) |
+| Option                                         | Price | Saves vs. MSRP |
+| ---------------------------------------------- | ----- | -------------- |
+| Best new deal ([Retailer] + coupon + cashback) | $XXX  | $YY (X%)       |
+| Best refurb deal ([Source], Grade A)           | $XXX  | $YY (X%)       |
+| Best used deal ([Source], Very Good)           | $XXX  | $YY (X%)       |
 
 ---
 
@@ -480,11 +545,20 @@ save the project output files, then update the shared knowledge base.
 Do this at natural conversation pauses (e.g., after the user says "great, thanks" or when
 wrapping up). Don't wait to be asked.
 
+NEVER FORGET TO RUN PHASE 6 COMPLETELY. 
+
+NEVER FORGET TO RUN PHASE 6 COMPLETELY.
+
 ### 6a. Save Project Files
 
-Write (or overwrite) these files in `~/shopper/{project-folder-name}/`:
+Write (or overwrite) these files in `~/shopper/{project-folder-name}/`.
+
+The `analysis/` subfolder (`review-research.md` and `pricing-research.md`) should already
+exist from Phase 2. If it doesn't, create it and backfill the research notes now — every
+entry must include a source hyperlink.
 
 **`requirements.md`** — everything gathered in Phase 1:
+
 ```markdown
 # Requirements — [Project Name]
 Date: [yyyy-mm-dd]
@@ -503,6 +577,7 @@ Category: [category / subcategory]
 ```
 
 **`comparison.md`** — the full comparison table from Phase 3, plus any refinements from Phase 4:
+
 ```markdown
 # Comparison — [Project Name]
 Generated: [date]
@@ -514,6 +589,7 @@ Generated: [date]
 ```
 
 **`selection.md`** — filled in once the user makes a selection (Phase 5):
+
 ```markdown
 # Selection — [Project Name]
 Date: [yyyy-mm-dd]
@@ -530,6 +606,7 @@ Selected: [product name]
 ```
 
 After writing the files, update `~/shopper/projects.md`:
+
 - Set Status to `completed` if the user identified a top choice but hasn't bought yet
 - Set Status to `in-progress` if the session ended before a selection was made
 - Set Status to `purchased` only when Phase 7 (Purchase Logging) confirms a real purchase
@@ -539,12 +616,14 @@ After writing the files, update `~/shopper/projects.md`:
 File: `~/.expert-shopper/global_preferences.md`
 
 Record anything the user revealed that applies across all categories:
+
 - Brand preferences or avoidances ("dislikes subscription-required devices")
 - Shopping habits ("prefers Amazon Prime for fast shipping", "open to used/refurb")
 - Budget philosophy ("willing to stretch for quality", "value-focused")
 - Life context relevant to purchases ("apartment dweller — noise a concern", "frequent traveler")
 - Ethical/environmental preferences ("prefers brands with good sustainability records")
 - Any explicit feedback on your recommendations ("too many options at once is overwhelming")
+- NEVER FORGET TO RUN THIS STEP. NEVER FORGET TO RUN THIS STEP.
 
 ### 6d. Update Category Context
 
@@ -552,10 +631,12 @@ File: `~/.expert-shopper/categories/{category}/_context.md`
 (and subcategory if applicable: `{category}/{subcategory}/_context.md`)
 
 Update or add to the "Key Buying Criteria" and "Common Pitfalls" sections. Things to capture:
+
 - Which specs turned out to be decisive for this user (and likely others)
 - Surprising trade-offs you discovered during research
 - Models that came up repeatedly as top picks or common pitfalls
 - Any spec ranges that tend to segment the category (entry / mid / enthusiast / pro)
+- NEVER FORGET TO RUN THIS STEP. NEVER FORGET TO RUN THIS STEP.
 
 ### 6e. Update Category Resources
 
@@ -563,10 +644,12 @@ File: `~/.expert-shopper/categories/{category}/_resources.md`
 (and subcategory if applicable)
 
 Add or update:
+
 - Any new review sites, YouTube channels, or Reddit communities you found particularly useful
 - Stores that had notably good pricing or selection for this category
 - Used/refurb sources that are particularly relevant for this product type
 - Flag any sources that seemed outdated or unreliable
+- NEVER FORGET TO RUN THIS STEP. NEVER FORGET TO RUN THIS STEP.
 
 ### 6f. Update User Preferences for This Category
 
@@ -574,14 +657,17 @@ File: `~/.expert-shopper/categories/{category}/_user_prefs.md`
 (and subcategory if applicable)
 
 This is the most personal file. Record:
+
 - What the user ended up choosing (or considering seriously)
 - Budget range they actually used (vs. stated)
 - Features they prioritized vs. dismissed
 - Any feedback on the recommendations ("too complex", "exactly right", "wanted more budget options")
 - Brands they liked or rejected and why
 - Anything they mentioned about a previous purchase in this category
+- NEVER FORGET TO RUN THIS STEP. NEVER FORGET TO RUN THIS STEP.
 
 **Format for all memory files** — keep them clean and dated:
+
 ```markdown
 ## [Date] — [Session summary in one line]
 - [Bullet point facts to remember]
@@ -601,16 +687,19 @@ learning for future sessions.
 ### Step 7a — Extract purchase details from the source
 
 **If a file was shared** (PDF, image, email screenshot, etc.):
+
 - Read it using the appropriate tool (Read for text files; view images directly)
 - Extract: product name/model, price paid, retailer/seller, purchase date, order number,
   payment method (optional), any warranty info shown on the receipt
 
 **If a URL was shared** (order confirmation page):
+
 - Fetch the URL and extract the same fields listed above
 - If the URL is inaccessible or requires login, ask the user to paste the key details
   (product, price, store, date, order number)
 
 **If the user just told you verbally** (e.g., "I bought the Sony XM5 from Amazon for $298"):
+
 - Extract what they told you and note that no formal receipt was captured
 
 If any critical field is missing and matters for warranty purposes (purchase date, retailer,
@@ -659,6 +748,7 @@ Then add a brief narrative covering the key deviation points, and **collect purc
 across distinct dimensions** using `AskUserQuestion` with `multiSelect: true`:
 
 **"Now that you've bought it — what influenced your final decision? Select all that apply:"**
+
 - 🏷️ Price — I found a better price than what was in the comparison
 - 🏪 Retailer — I bought from a store that wasn't on the suggested list
 - 📦 Condition — I went with used/refurb/open-box (or switched to new)
@@ -671,6 +761,7 @@ across distinct dimensions** using `AskUserQuestion` with `multiSelect: true`:
 - ✅ Nothing special — I just went with the top pick at the researched price
 
 For **each dimension the user selects**, ask one targeted follow-up:
+
 - **Price** → "What did you pay, and where did you find that price?"
 - **Retailer** → "Which store? Was it a local find, a deal site, or something else?"
 - **Different model** → "What made [X] stand out over the recommendations?"
@@ -686,6 +777,7 @@ Check the receipt/product for warranty information. Then always issue this remin
 customized to what you know:
 
 > **📋 Warranty Action Items**
+> 
 > - **Register your product**: Most manufacturers require registration within 30–90 days
 >   for full warranty coverage. [Search for "[product name] warranty registration" if URL
 >   not visible on receipt.]
@@ -802,3 +894,4 @@ that would help future searches in this category. Write each as a separate entry
 - **Be transparent.** If a price is uncertain or a source seems outdated, say so.
 - **Memory is a gift, not a burden.** Don't make the user feel surveilled. Use what you know
   to be more helpful, not to recite their history back at them.
+- NEVER FORGET TO RUN THIS STEP. NEVER FORGET TO RUN THIS STEP.

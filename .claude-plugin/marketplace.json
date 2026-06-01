@@ -16,6 +16,15 @@
       "skills": [
         "./expert-shopper"
       ]
+    },
+    {
+      "name": "coding-standards",
+      "description": "Diego's engineering standards: clean comments, Conventional Commits, pytest testing, docs-sync, workflow.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./coding-standards"
+      ]
     }
   ]
 }

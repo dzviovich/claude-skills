@@ -5,6 +5,46 @@ Entries are in reverse chronological order (newest first).
 
 ---
 
+## [1.6.0] — 2026-03-18
+
+### Changed
+- **SKILL.md trimmed ~40%** — removed scripted dialogue examples, redundant prose, and
+  over-scaffolded worked examples (Phase 4b follow-up examples, repeated URL rules, Phase 1
+  opener, etc.) while preserving all actual instructions
+- Closing principles reduced from 9 to 5, removing those already stated within phases
+
+---
+
+## [1.5.0] — 2026-03-18
+
+### Changed
+- **`_user_prefs.md` is now a living preference profile, not a session log** — files store
+  only preferences that inform future shopping decisions; purchase history details stay
+  in `purchase_log.md`
+- **Read-first, edit-in-place update discipline** — Phases 6c, 6f, and 7g now require
+  reading the full file before writing; existing entries are kept / strengthened / modified /
+  removed rather than new session entries being appended
+- **Phase 7g filter** — purchase signals are evaluated against the question "does this tell
+  me something about what this user wants in future?" before being written to `_user_prefs.md`;
+  one-time facts (order numbers, warranty dates, specific prices) are never written there
+- **Seed `_user_prefs.md` files reformatted** — all four seed files (global, laptops,
+  headphones, espresso-machines) now use the preference-organized format with sections:
+  Must-have, Prefer/Nice-to-have, Avoid, Budget, Shopping habits
+
+---
+
+## [1.4.1] — 2026-03-18
+
+### Added
+- **`analysis/` subfolder** — all research findings are now saved to `{project}/analysis/`
+  during Phase 2, before the comparison is built
+- **Sourced hyperlinks required** — every fact in `review-research.md` and
+  `pricing-research.md` must include a source hyperlink; bare assertions are not accepted
+- **Structured research templates** — `review-research.md` (per-model findings with source)
+  and `pricing-research.md` (price tables with direct URLs per retailer/listing)
+
+---
+
 ## [1.4.0] — 2026-03-18
 
 ### Added
