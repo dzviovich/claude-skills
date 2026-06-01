@@ -25,6 +25,24 @@
       "skills": [
         "./coding-standards"
       ]
+    },
+    {
+      "name": "calendar-cleanup",
+      "description": "Scheduled skill: check the dzviovich@gmail.com Google Calendar and delete future events that dzviovich@coca-cola.com declined.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./calendar-cleanup"
+      ]
+    },
+    {
+      "name": "weekly-vault-digest",
+      "description": "Scheduled skill: generate a weekly digest of active projects, sessions, and decisions into the Obsidian AI vault.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./weekly-vault-digest"
+      ]
     }
   ]
 }
